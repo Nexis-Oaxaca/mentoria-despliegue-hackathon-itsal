@@ -1,0 +1,39 @@
+{
+  "name": "mentoria-despliegue-hackathon-itsal",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "run-s \"lint:*\"",
+    "lint:oxlint": "oxlint . --fix",
+    "lint:eslint": "eslint . --fix --cache",
+    "format": "prettier --write --experimental-cli src/",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-oxlint": "~1.82.0",
+    "eslint-plugin-vue": "~10.11.0",
+    "globals": "^17.12.0",
+    "npm-run-all2": "^9.0.3",
+    "oxlint": "~1.82.0",
+    "prettier": "3.9.6",
+    "vite": "^8.2.2",
+    "vue-eslint-parser": "^10.4.1",
+    "wrangler": "4.168.0"
+  },
+  "engines": {
+    "node": "^24.12.0"
+  },
+  "description": "Sitio de ejemplo de la mentoría \"Despliega tu proyecto a costo $0\" (ITSAL). Vue 3 + Vite, 100 % estático."
+}
