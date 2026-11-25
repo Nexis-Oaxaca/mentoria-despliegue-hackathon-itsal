@@ -177,6 +177,15 @@ ol {
   max-width: var(--ancho-texto);
 }
 
+/* Un contenedor angosto se alinea a la izquierda como el resto de las secciones. */
+.contenedor.texto-angosto {
+  max-width: var(--ancho-max);
+}
+
+.contenedor.texto-angosto > * {
+  max-width: var(--ancho-texto);
+}
+
 .texto-suave {
   color: var(--color-texto-suave);
 }

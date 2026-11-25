@@ -13,7 +13,7 @@ defineProps({
     <li v-for="(paso, i) in pasos" :key="paso.titulo" class="paso">
       <span class="numero" aria-hidden="true">{{ i + 1 }}</span>
       <div class="contenido">
-        <h4>{{ paso.titulo }}</h4>
+        <h3>{{ paso.titulo }}</h3>
         <p v-if="paso.descripcion">{{ paso.descripcion }}</p>
 
         <dl v-if="paso.valores?.length" class="valores">
@@ -78,7 +78,7 @@ defineProps({
   font-weight: 700;
 }
 
-h4 {
+h3 {
   font-size: 1.1rem;
   margin: 0.35rem 0 0.4rem;
 }

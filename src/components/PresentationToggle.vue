@@ -9,6 +9,7 @@ const { activo, alternar } = usePresentationMode()
     type="button"
     class="interruptor"
     :aria-pressed="activo"
+    aria-label="Modo presentación"
     title="Agranda la letra para proyectar en el salón"
     @click="alternar"
   >
@@ -22,7 +23,7 @@ const { activo, alternar } = usePresentationMode()
         d="M3 4h18v12H3zM8 20h8M12 16v4"
       />
     </svg>
-    <span>Modo presentación</span>
+    <span class="texto">Modo presentación</span>
   </button>
 </template>
 
@@ -41,6 +42,16 @@ const { activo, alternar } = usePresentationMode()
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.texto {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .texto {
+    display: inline;
+  }
 }
 
 .interruptor:hover {

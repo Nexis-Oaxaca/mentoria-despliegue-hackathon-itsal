@@ -12,7 +12,7 @@ const enlaces = [
 <template>
   <header class="encabezado">
     <div class="contenedor fila">
-      <RouterLink to="/" class="marca">
+      <RouterLink to="/" class="marca" aria-label="Inicio: Despliega a costo $0">
         <span aria-hidden="true" class="logo">$0</span>
         <span class="marca-texto">Despliega a costo $0</span>
       </RouterLink>

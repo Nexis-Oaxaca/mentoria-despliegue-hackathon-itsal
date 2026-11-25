@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import CodeBlock from '@/components/CodeBlock.vue'
 import { formatearFecha } from '@/data/site'
 
@@ -10,6 +10,9 @@ const props = defineProps({
   abierta: { type: Boolean, default: false },
 })
 
+// El contenido solo se pinta cuando abres la tarjeta: la página carga más ligera.
+const abiertaAhora = ref(props.abierta)
+
 const tarjeta = computed(() => {
   const valor = props.plataforma.pide_tarjeta
   if (valor === true) return 'Sí'
@@ -19,16 +22,21 @@ const tarjeta = computed(() => {
 </script>
 
 <template>
-  <details class="tarjeta" :open="abierta" :id="plataforma.id">
+  <details
+    class="tarjeta"
+    :open="abierta"
+    :id="plataforma.id"
+    @toggle="abiertaAhora = $event.target.open"
+  >
     <summary>
-      <span class="titulo">
+      <h3 class="titulo">
         <span class="nombre">{{ plataforma.nombre }}</span>
         <span v-if="plataforma.recomendada" class="insignia">Recomendada</span>
-      </span>
+      </h3>
       <span class="ideal">{{ plataforma.ideal_para }}</span>
     </summary>
 
-    <div class="cuerpo">
+    <div v-if="abiertaAhora" class="cuerpo">
       <h4>Plan gratuito (verificado el {{ formatearFecha(plataforma.verificado_el) }})</h4>
       <ul>
         <li v-for="item in plataforma.plan_gratuito" :key="item">{{ item }}</li>
@@ -144,6 +152,8 @@ summary::after {
 }
 
 .titulo {
+  margin: 0;
+  font-size: inherit;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

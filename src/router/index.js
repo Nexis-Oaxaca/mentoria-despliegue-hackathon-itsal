@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import FrontendView from '@/views/FrontendView.vue'
+import BackendView from '@/views/BackendView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 // createWebHistory da URLs limpias (/frontend en lugar de /#/frontend).
 // Por eso el hosting necesita el "fallback de SPA": si recargas /frontend,
@@ -20,8 +23,9 @@ const router = createRouter({
     {
       path: '/frontend',
       name: 'frontend',
-      // Carga diferida: este código solo se descarga cuando visitas la ruta.
-      component: () => import('@/views/FrontendView.vue'),
+      // Importamos las vistas directo (sin carga diferida): el sitio es pequeño y así
+      // la página no "salta" mientras se descarga el código de la ruta.
+      component: FrontendView,
       meta: {
         titulo: 'Despliega tu frontend gratis',
         descripcion:
@@ -31,7 +35,7 @@ const router = createRouter({
     {
       path: '/backend',
       name: 'backend',
-      component: () => import('@/views/BackendView.vue'),
+      component: BackendView,
       meta: {
         titulo: '¿Y mi backend?',
         descripcion:
@@ -41,7 +45,7 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'no-encontrada',
-      component: () => import('@/views/NotFoundView.vue'),
+      component: NotFoundView,
       meta: { titulo: 'Página no encontrada', descripcion: 'Esta página no existe.' },
     },
   ],
