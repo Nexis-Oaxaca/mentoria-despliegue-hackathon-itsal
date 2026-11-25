@@ -70,6 +70,7 @@ export const platforms = [
       },
       { texto: 'Precios', url: 'https://developers.cloudflare.com/workers/platform/pricing/' },
       { texto: 'Límites', url: 'https://developers.cloudflare.com/workers/platform/limits/' },
+      { texto: 'Precios de D1', url: 'https://developers.cloudflare.com/d1/platform/pricing/' },
       {
         texto: 'Límites de Workers Builds',
         url: 'https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/',
@@ -83,7 +84,7 @@ export const platforms = [
       tipo_servicio: 'Serverless: tu código corre por solicitud, sin servidor encendido',
       duerme: 'No aplica: no hay un servidor que se apague',
       limites: '100,000 solicitudes al día y 10 ms de CPU por solicitud',
-      base_datos: 'D1 (SQLite) de Cloudflare [VERIFICAR: límites gratuitos de D1]',
+      base_datos: 'D1 (SQLite): 10 bases, 5 GB en total, 5 millones de filas leídas al día',
       dificultad: 'Media: no es Node.js completo, usa APIs web como fetch y Request',
     },
     verificado_el: VERIFICADO,
