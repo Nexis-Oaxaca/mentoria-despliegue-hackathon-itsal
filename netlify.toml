@@ -1,0 +1,11 @@
+# Configuración de Netlify. Docs: https://docs.netlify.com/build/frameworks/framework-setup-guides/vite/
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Fallback de SPA: cualquier ruta que no sea un archivo responde con index.html (200).
+# Va aquí y no en public/_redirects para que no termine en el dist/ que subimos a Cloudflare.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

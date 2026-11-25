@@ -10,7 +10,7 @@ export const site = {
   // Fecha en la que se revisó la documentación oficial de cada plataforma.
   verificadoEl: '2026-11-25',
   // URL pública del sitio desplegado en Cloudflare Workers.
-  urlPublica: '[CONFIRMAR: URL final de workers.dev tras el primer despliegue]',
+  urlPublica: 'https://despliegue-hackathon.joanpagarf09.workers.dev',
   repoUrl: 'https://github.com/Nexis-Oaxaca/mentoria-despliegue-hackathon-itsal',
 }
 

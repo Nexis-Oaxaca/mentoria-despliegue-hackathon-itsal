@@ -1,0 +1,14 @@
+// Configuración de Cloudflare Workers (static assets) para este sitio.
+// Docs: https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Debe coincidir con el nombre del Worker en el dashboard, o el build falla.
+  "name": "despliegue-hackathon",
+  "compatibility_date": "2026-11-25",
+  "assets": {
+    // La carpeta que genera `npm run build`.
+    "directory": "./dist/",
+    // Si la ruta no es un archivo, responde con index.html (200): adiós al 404 al recargar.
+    "not_found_handling": "single-page-application"
+  }
+}
